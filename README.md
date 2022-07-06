@@ -34,7 +34,7 @@ Naming the stack is optional, but is required if you intend to deploy multiple s
 
 After stack creation you need to upload your public key:
 ```
-./upload-key.s ~/.ssh/id.pub [stack-name]
+./upload-key.sh ~/.ssh/id.pub [stack-name]
 ```
 
 Finally run your container, whenever you wish to connect:
