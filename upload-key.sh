@@ -3,7 +3,7 @@ set -e
 set -u
 set -o pipefail
 
-keyFile=$1
+keyFile=~/.ssh/id_rsa.pub
 stackName=${2:-bastion-dev}
 
 echo "getting accountId..."
