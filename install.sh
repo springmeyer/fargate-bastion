@@ -20,6 +20,8 @@ aws cloudformation create-stack \
     --stack-name $stackName \
     --template-body file://cfn.yml \
     --capabilities CAPABILITY_IAM
+
+echo "running stack-create-complete..."
 aws cloudformation wait stack-create-complete --stack-name $stackName
 
 echo "creating host keys..."
