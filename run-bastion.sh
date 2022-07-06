@@ -23,6 +23,7 @@ task=$(set -e; aws ecs run-task \
     --task-definition bastion \
     --count 1 \
     --launch-type FARGATE \
+    --platform-version='1.4.0' \
     --network-configuration "awsvpcConfiguration={subnets=[${firstSubnet},${secondSubnet}],securityGroups=[${securityGroup}],assignPublicIp='ENABLED'}" \
     --query 'tasks[0].taskArn' \
     --output text )
