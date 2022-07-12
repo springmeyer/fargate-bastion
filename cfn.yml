@@ -1,6 +1,23 @@
 AWSTemplateFormatVersion: 2010-09-09
 Resources:
-  
+
+  Service:
+    Type: AWS::ECS::Service
+    Properties:
+      Cluster: !Ref FargateCluster
+      TaskDefinition: !Ref TaskDefinition
+      PlatformVersion: '1.4.0'
+      DesiredCount: 0
+      CapacityProviderStrategy:
+        - CapacityProvider: 'FARGATE_SPOT'
+          Weight: 1
+      NetworkConfiguration:
+        AwsvpcConfiguration:
+          AssignPublicIp: 'ENABLED'
+          Subnets:
+            - !Ref PublicSubnetOne
+            - !Ref PublicSubnetTwo
+
   BastionConfigBucket:
     Type: 'AWS::S3::Bucket'
     Properties: 
