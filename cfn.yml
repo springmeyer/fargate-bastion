@@ -42,13 +42,13 @@ Resources:
           #   Capabilities:
           #     Add:
           #       - 'SYS_PTRACE'
-          Ulimits:
-            - Name: 'nofile'
-              SoftLimit: 10240
-              HardLimit: 10240
-            - Name: 'core'
-              SoftLimit: -1
-              HardLimit: -1
+          # Ulimits:
+          #   - Name: 'nofile'
+          #     SoftLimit: 10240
+          #     HardLimit: 10240
+          #   - Name: 'core'
+          #     SoftLimit: -1
+          #     HardLimit: -1
           PortMappings:
             - ContainerPort: 42
               HostPort: 42
